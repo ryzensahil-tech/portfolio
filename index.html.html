@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ryzen.creates | Premium Thumbnail Designer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF4D00;
+            --primary-glow: rgba(255, 77, 0, 0.4);
+            --dark-bg: #050505;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-heading { font-family: 'Orbitron', sans-serif; }
+
+        .glow-red { box-shadow: 0 0 20px var(--primary-glow); }
+        .text-glow { text-shadow: 0 0 10px var(--primary-glow); }
+        .bg-gradient-red { background: linear-gradient(135deg, #FF4D00 0%, #FF8700 100%); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        .portfolio-card img {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .portfolio-card:hover img { transform: scale(1.05); }
+        
+        .portfolio-overlay {
+            background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+        .progress-bar { height: 8px; background: #222; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--primary); width: 0; transition: width 1.5s ease-in-out; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 25px var(--primary-glow);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-xl font-bold font-heading tracking-tighter">
+                RYZEN.<span class="text-[#FF4D00]">CREATES</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-xs uppercase tracking-widest">
+                <a href="#work" class="hover:text-[#FF4D00] transition">Portfolio</a>
+                <a href="#about" class="hover:text-[#FF4D00] transition">Approach</a>
+                <a href="#contact" class="hover:text-[#FF4D00] transition">Hire Me</a>
+            </div>
+            <a href="#contact" class="bg-gradient-red px-6 py-2 rounded-full text-xs font-bold btn-glow transition">GET A QUOTE</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-[#FF4D00] opacity-10 blur-[120px] rounded-full"></div>
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                    Thumbnails That <br> <span class="text-[#FF4D00] text-glow">Get Clicks.</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg">
+                    Stop losing viewers to boring designs. I create high-conversion thumbnails that force people to stop scrolling and click your video.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#work" class="bg-gradient-red px-8 py-4 rounded-xl font-bold btn-glow transition flex items-center">
+                        View My Work <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="border border-gray-700 hover:border-[#FF4D00] px-8 py-4 rounded-xl font-bold transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center" data-aos="zoom-in">
+                <div class="relative z-10 w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-[#FF4D00]/30 glow-red">
+                    <!-- YOUR PFP -->
+                    <img src="instatry.jpg" alt="Ryzen Creates" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-12 glass border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-youtube text-3xl text-[#FF4D00] mb-2"></i>
+                    <h3 class="text-3xl font-bold counter" data-target="31000">0</h3>
+                    <p class="text-gray-500 text-sm uppercase">Views Generated</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-layer-group text-3xl text-[#FF4D00] mb-2"></i>
+                    <h3 class="text-3xl font-bold counter" data-target="50">0</h3>
+                    <p class="text-gray-500 text-sm uppercase">Thumbnails Made</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-users text-3xl text-[#FF4D00] mb-2"></i>
+                    <h3 class="text-3xl font-bold counter" data-target="6">0</h3>
+                    <p class="text-gray-500 text-sm uppercase">Happy Creators</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-bolt text-3xl text-[#FF4D00] mb-2"></i>
+                    <h3 class="text-3xl font-bold counter" data-target="17">0</h3>
+                    <p class="text-gray-500 text-sm uppercase">CTR Increase (%)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- PORTFOLIO GRID (15 ITEMS) -->
+<section id="work" class="py-24">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 font-heading" data-aos="fade-up">My Portfolio</h2>
+            <p class="text-gray-400 max-w-xl mx-auto" data-aos="fade-up">A collection of high-performance thumbnails designed to dominate the YouTube algorithm.</p>
+            <div class="w-20 h-1 bg-[#FF4D00] mx-auto mt-6"></div>
+        </div>
+
+        <!-- THE MAGIC GRID BOX -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- THUMB 1 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb1.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 2 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up" data-aos-delay="50">
+                <img src="thumb2.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 3 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up" data-aos-delay="100">
+                <img src="thumb3.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 4 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb4.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 5 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb5.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 6 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb6.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 7 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb7.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 8 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb8.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 9 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb9.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 10 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb10.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 11 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb11.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 12 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb12.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 13 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb13.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 14 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb14.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+
+            <!-- THUMB 15 -->
+            <div class="portfolio-card relative group overflow-hidden rounded-2xl bg-[#111] shadow-2xl shadow-black/50" data-aos="fade-up">
+                <img src="thumb15.jpg" class="w-full aspect-video object-cover">
+                <div class="portfolio-overlay absolute inset-0 flex items-end p-6">
+                    <p class="font-bold text-lg"></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPROACH SECTION -->
+    <section id="about" class="py-24 bg-white/5">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-8 font-heading">Design Methodology</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-[#FF4D00] font-bold mb-2">Color Psychology</h4>
+                        <p class="text-gray-400">Using strategic color grading to evoke specific emotions and highlight the focal point of the video.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[#FF4D00] font-bold mb-2">Visual Hierarchy</h4>
+                        <p class="text-gray-400">Guiding the eye from the most important element to the secondary text in under 1 second.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold mb-8">Expertise Breakdown</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm uppercase"><span>Photoshop Manipulation</span><span>98%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="98%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm uppercase"><span>CTR Optimization</span><span>95%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm uppercase"><span>Color Grading</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Info Box -->
+                <div class="space-y-6" data-aos="fade-right">
+                    <h3 class="text-3xl font-bold font-heading">Get In Touch</h3>
+                    <div class="glass p-8 rounded-3xl space-y-6 border-l-4 border-[#FF4D00]">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-[#FF4D00] w-10 text-xl"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Email Me</p>
+                                <p class="font-bold text-sm">kumawatsahil2012@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp text-[#FF4D00] w-10 text-xl"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">WhatsApp</p>
+                                <p class="font-bold text-sm">+91 9987141731</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-[#FF4D00] w-10 text-xl"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Response Time</p>
+                                <p class="font-bold text-sm">~ 8 Hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/ryzen-creates-618465393" target="_blank" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-[#FF4D00] transition text-xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ryzen.creates/" target="_blank" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-[#FF4D00] transition text-xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="md:col-span-2" data-aos="fade-left">
+                    <form class="glass p-10 rounded-3xl space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Full Name" class="bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-[#FF4D00] transition">
+                            <input type="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-[#FF4D00] transition">
+                        </div>
+                        <textarea rows="4" placeholder="Briefly describe your video or niche..." class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-[#FF4D00] transition"></textarea>
+                        <button class="w-full bg-gradient-red py-4 rounded-xl font-bold btn-glow transition uppercase tracking-widest">Send Project Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="container mx-auto px-6">
+            <div class="text-xl font-bold font-heading tracking-tighter mb-6">
+                RYZEN.<span class="text-[#FF4D00]">CREATES</span>
+            </div>
+            <p class="text-gray-500 text-xs mb-4">Elevating visual storytelling for the next generation of creators.</p>
+            <p class="text-gray-600 text-[10px] uppercase tracking-widest">© 2024 Ryzen Creates. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Counter Logic
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Fill Progress Bars
+                    document.querySelectorAll('.progress-fill').forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                    
+                    // Run Counters
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const speed = 100;
+                        const updateCount = () => {
+                            const count = +counter.innerText.replace(/[^0-9]/g, '');
+                            const inc = target / speed;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc) + (target > 1000 ? '' : '');
+                                if(target > 1000 && count + inc >= target) counter.innerText = "31k+";
+                                else if(target === 50 && count + inc >= target) counter.innerText = "50+";
+                                else if(target === 6 && count + inc >= target) counter.innerText = "6";
+                                else if(target === 17 && count + inc >= target) counter.innerText = "17%";
+                                else setTimeout(updateCount, 15);
+                            }
+                        };
+                        updateCount();
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(document.querySelector('#about'));
+    </script>
+</body>
+</html>
